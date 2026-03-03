@@ -124,13 +124,8 @@ export const BrowseSettings = () => {
                 }}
                 valueInfos={serverSettings.extensionRepos.map((extensionRepo) => [extensionRepo])}
                 addItemButtonTitle={t`Add repository`}
-                placeholder="https://github.com/MY_ACCOUNT/MY_REPO/tree/repo"
-                validateItem={(repo) =>
-                    !!repo.match(
-                        /https:\/\/(www\.|raw\.)?(github|githubusercontent)\.com\/([^/]+)\/([^/]+)((\/tree|\/blob)?\/([^/\n]*))?(\/([^/\n]*\.json)?)?/g,
-                    )
-                }
-                invalidItemError={t`Invalid repository url`}
+                placeholder="https://example.com/my-repo/index.json"
+                validateItem={() => true}
             />
             <TextSetting
                 settingName={t`Local source location`}
